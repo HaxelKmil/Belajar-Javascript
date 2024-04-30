@@ -384,19 +384,7 @@
 // let arr = array.reduce((total, angka) => total + angka, 0); 
 // console.log(arr);
 
-// // latihan filter
-// const numbers = [5, 6, 8, 10, 9, 12];
 
-// // Fungsi filter yang dibuat
-// function filterNumbers(array, angka) {
-//   return array.filter(angka);
-// }
-
-// // Contoh pemanggilan fungsi filter
-// let evenNumbers = filterNumbers(numbers, function(number) {
-//   return number % 2 === 0;
-// });
-// console.log(evenNumbers); 
 
 // latihan map
 // const array = [5, 6, 2, 3, 1];
@@ -415,3 +403,114 @@
 
 // sumArray(hargaBarangBeli, 0);
 // console.log(`10000 + 5000 + 7000 + 8000 = ${totalHarga}`);
+
+// HTML Fragment
+// const barangMasuk = {
+//     kode : Math.random(),
+//     nama : 'Sapu',
+//     jumlah : 12,
+//     keterangan : '',
+// };
+
+// const element = `<div class="barangMasuk">
+//     <h2>${barangMasuk.nama}</h2>
+//     <span class="jumlah">${barangMasuk.jumlah}</span>
+// </div>`;
+
+// console.log(barangMasuk);
+
+// document.body.innerHTML = barangMasuk;
+
+// Looping
+// const barangMasuk = [
+//     {
+//         kode : Math.random(),
+//         nama : 'Sapu',
+//         jumlah : 12,
+//         keterangan : '',
+//     },
+//     {
+//         kode : Math.random(),
+//         nama : 'Proyektor',
+//         jumlah : 13,
+//         keterangan : '',
+//     },
+//     {
+//         kode : Math.random(),
+//         nama : 'Mouse',
+//         jumlah : 11,
+//         keterangan : '',
+//     },
+// ];
+
+// const element = `<div class="barangMasuk">
+//     ${barangMasuk.map(b => `<ul>
+//         <li>${b.kode}</li>
+//         <li>${b.nama}</li>
+//         <li>${b.jumlah}</li>
+//         <li>${b.keterangan}</li>
+//     `).join('')}
+// </div>`;
+
+// document.body.innerHTML = barangMasuk;
+
+// tugas
+// const createData = (murid, nilaiMurid, ibu, belanjaanIbu) => ({ murid: [murid, nilaiMurid], ibu: [ibu, belanjaanIbu] });
+
+// const nilaiRatarata = (nilaiMurid, callback) => 
+// callback(nilaiMurid.reduce((acc, cur) => acc + cur, 0) / nilaiMurid.length);
+
+// const hitungTotalBelanja = (belanjaanIbu, callback) => 
+// callback(belanjaanIbu.reduce((acc, cur) => acc + cur, 0));
+
+// //pemanggilan fungsi
+// const [murid, nilaiMurid] = ["Rony", [90, 67, 45]];
+// const [ibu, belanjaanIbu] = ["Ibu Rony", [12000, 13000, 15000]];
+
+// const averageNilai = nilaiRatarata(nilaiMurid, nilai => nilai);
+// const totalBelanja = hitungTotalBelanja(belanjaanIbu, total => total);
+
+// console.log("Data Murid:", murid);
+// console.log("Nilai Rata-rata Murid:", averageNilai);
+// console.log("Data Ibu:", ibu);
+// console.log("Total Belanjaan Ibu:", totalBelanja);
+
+
+// latihan synchrounus
+
+// function sapa(nama) {
+//     alert(`Selamat Datang , ${nama}`);
+// }
+
+// function tampilkanPesan(callback) {
+//     const nama = prompt('Masukan Nama anda : ');
+//     callback(nama);
+// }
+// tampilkanPesan(sapa);
+
+// asynchrounus
+// function getDatabarangMasuk(url, success, error) {
+//     let xhr = new XMLHttpRequest();
+//     xhr.onreadystatechange = function() {
+//         if (xhr.readyState === 4) {
+//             if (xhr.status === 200) {
+//                 success(xhr.response);
+//             } else if (xhr.status === 404) {
+//                 error();
+//             }
+//         }
+//     }
+
+//     xhr.open('GET', url); 
+//     xhr.send();
+// }
+
+// console.log('mulai');
+// getDatabarangMasuk('database/barangmasuk.json', results => {
+//     const dtm = JSON.parse(results);   
+//     dtm.forEach(m => console.log(m.nama))
+// }, () => {
+
+// });
+// console.log('selesai');
+

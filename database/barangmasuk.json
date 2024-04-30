@@ -1,0 +1,21 @@
+[
+    { 
+        "kode": "A1001", 
+        "nama": "Monitor", 
+        "jumlah": 10, 
+        "keterangan": "Barang elektronik"
+    },
+    { 
+        "kode": "A1002", 
+        "nama": "Mouse", 
+        "jumlah": 5, 
+        "keterangan": "Barang elektronik"
+    },
+    { 
+        "kode": "A1003", 
+        "nama": "Keyboard", 
+        "jumlah": 20, 
+        "keterangan": "Barang elektronik"
+    }
+]
+
